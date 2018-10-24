@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		375255BD21803EF200328FFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255BC21803EF200328FFF /* AppDelegate.m */; };
+		375255C021803EF300328FFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255BF21803EF300328FFF /* ViewController.m */; };
+		375255C321803EF300328FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375255C121803EF300328FFF /* Main.storyboard */; };
+		375255C521803EF400328FFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375255C421803EF400328FFF /* Assets.xcassets */; };
+		375255C821803EF400328FFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375255C621803EF400328FFF /* LaunchScreen.storyboard */; };
+		375255CB21803EF400328FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255CA21803EF400328FFF /* main.m */; };
+		375255D72180402600328FFF /* UIViewController+LeakMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255D62180402600328FFF /* UIViewController+LeakMonitor.m */; };
+		375255DA218040A100328FFF /* UINavigationController+LeakMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255D9218040A100328FFF /* UINavigationController+LeakMonitor.m */; };
+		375255DD2180413600328FFF /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255DC2180413600328FFF /* NSObject+Swizzling.m */; };
+		375255E0218058CF00328FFF /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255DF218058CF00328FFF /* OneViewController.m */; };
+		375255E3218058D900328FFF /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255E2218058D900328FFF /* TwoViewController.m */; };
+		375255E6218058E800328FFF /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255E5218058E800328FFF /* ThreeViewController.m */; };
+		375255E92180629400328FFF /* ZFLeakMonitorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255E82180629400328FFF /* ZFLeakMonitorManager.m */; };
+		375255EC21806B7C00328FFF /* MemoryLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255EB21806B7C00328FFF /* MemoryLeakViewController.m */; };
+		375255EF218070BE00328FFF /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255EE218070BE00328FFF /* FourViewController.m */; };
+		375255F2218076C000328FFF /* FiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255F1218076C000328FFF /* FiveViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		375255B821803EF200328FFF /* XZFLeakMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XZFLeakMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		375255BB21803EF200328FFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		375255BC21803EF200328FFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		375255BE21803EF200328FFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		375255BF21803EF300328FFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		375255C221803EF300328FFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		375255C421803EF400328FFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		375255C721803EF400328FFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		375255C921803EF400328FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		375255CA21803EF400328FFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		375255D52180402600328FFF /* UIViewController+LeakMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LeakMonitor.h"; sourceTree = "<group>"; };
+		375255D62180402600328FFF /* UIViewController+LeakMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LeakMonitor.m"; sourceTree = "<group>"; };
+		375255D8218040A100328FFF /* UINavigationController+LeakMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+LeakMonitor.h"; sourceTree = "<group>"; };
+		375255D9218040A100328FFF /* UINavigationController+LeakMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+LeakMonitor.m"; sourceTree = "<group>"; };
+		375255DB2180413500328FFF /* NSObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
+		375255DC2180413600328FFF /* NSObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
+		375255DE218058CF00328FFF /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		375255DF218058CF00328FFF /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		375255E1218058D900328FFF /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		375255E2218058D900328FFF /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		375255E4218058E800328FFF /* ThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		375255E5218058E800328FFF /* ThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+		375255E72180629400328FFF /* ZFLeakMonitorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFLeakMonitorManager.h; sourceTree = "<group>"; };
+		375255E82180629400328FFF /* ZFLeakMonitorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFLeakMonitorManager.m; sourceTree = "<group>"; };
+		375255EA21806B7C00328FFF /* MemoryLeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryLeakViewController.h; sourceTree = "<group>"; };
+		375255EB21806B7C00328FFF /* MemoryLeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryLeakViewController.m; sourceTree = "<group>"; };
+		375255ED218070BE00328FFF /* FourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		375255EE218070BE00328FFF /* FourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		375255F0218076C000328FFF /* FiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FiveViewController.h; sourceTree = "<group>"; };
+		375255F1218076C000328FFF /* FiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiveViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		375255B521803EF200328FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		375255AF21803EF200328FFF = {
+			isa = PBXGroup;
+			children = (
+				375255BA21803EF200328FFF /* XZFLeakMonitor */,
+				375255B921803EF200328FFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		375255B921803EF200328FFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				375255B821803EF200328FFF /* XZFLeakMonitor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		375255BA21803EF200328FFF /* XZFLeakMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				375255BB21803EF200328FFF /* AppDelegate.h */,
+				375255BC21803EF200328FFF /* AppDelegate.m */,
+				375255BE21803EF200328FFF /* ViewController.h */,
+				375255BF21803EF300328FFF /* ViewController.m */,
+				375255DE218058CF00328FFF /* OneViewController.h */,
+				375255DF218058CF00328FFF /* OneViewController.m */,
+				375255E1218058D900328FFF /* TwoViewController.h */,
+				375255E2218058D900328FFF /* TwoViewController.m */,
+				375255E4218058E800328FFF /* ThreeViewController.h */,
+				375255E5218058E800328FFF /* ThreeViewController.m */,
+				375255ED218070BE00328FFF /* FourViewController.h */,
+				375255EE218070BE00328FFF /* FourViewController.m */,
+				375255F0218076C000328FFF /* FiveViewController.h */,
+				375255F1218076C000328FFF /* FiveViewController.m */,
+				375255D421803F9C00328FFF /* XZFLeakMonitor */,
+				375255C121803EF300328FFF /* Main.storyboard */,
+				375255C421803EF400328FFF /* Assets.xcassets */,
+				375255C621803EF400328FFF /* LaunchScreen.storyboard */,
+				375255C921803EF400328FFF /* Info.plist */,
+				375255CA21803EF400328FFF /* main.m */,
+			);
+			path = XZFLeakMonitor;
+			sourceTree = "<group>";
+		};
+		375255D421803F9C00328FFF /* XZFLeakMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				375255D52180402600328FFF /* UIViewController+LeakMonitor.h */,
+				375255D62180402600328FFF /* UIViewController+LeakMonitor.m */,
+				375255D8218040A100328FFF /* UINavigationController+LeakMonitor.h */,
+				375255D9218040A100328FFF /* UINavigationController+LeakMonitor.m */,
+				375255DB2180413500328FFF /* NSObject+Swizzling.h */,
+				375255DC2180413600328FFF /* NSObject+Swizzling.m */,
+				375255E72180629400328FFF /* ZFLeakMonitorManager.h */,
+				375255E82180629400328FFF /* ZFLeakMonitorManager.m */,
+				375255EA21806B7C00328FFF /* MemoryLeakViewController.h */,
+				375255EB21806B7C00328FFF /* MemoryLeakViewController.m */,
+			);
+			path = XZFLeakMonitor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		375255B721803EF200328FFF /* XZFLeakMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 375255CE21803EF400328FFF /* Build configuration list for PBXNativeTarget "XZFLeakMonitor" */;
+			buildPhases = (
+				375255B421803EF200328FFF /* Sources */,
+				375255B521803EF200328FFF /* Frameworks */,
+				375255B621803EF200328FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XZFLeakMonitor;
+			productName = XZFLeakMonitor;
+			productReference = 375255B821803EF200328FFF /* XZFLeakMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		375255B021803EF200328FFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = 58;
+				TargetAttributes = {
+					375255B721803EF200328FFF = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 375255B321803EF200328FFF /* Build configuration list for PBXProject "XZFLeakMonitor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 375255AF21803EF200328FFF;
+			productRefGroup = 375255B921803EF200328FFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				375255B721803EF200328FFF /* XZFLeakMonitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		375255B621803EF200328FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375255C821803EF400328FFF /* LaunchScreen.storyboard in Resources */,
+				375255C521803EF400328FFF /* Assets.xcassets in Resources */,
+				375255C321803EF300328FFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		375255B421803EF200328FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375255C021803EF300328FFF /* ViewController.m in Sources */,
+				375255DD2180413600328FFF /* NSObject+Swizzling.m in Sources */,
+				375255CB21803EF400328FFF /* main.m in Sources */,
+				375255EC21806B7C00328FFF /* MemoryLeakViewController.m in Sources */,
+				375255DA218040A100328FFF /* UINavigationController+LeakMonitor.m in Sources */,
+				375255D72180402600328FFF /* UIViewController+LeakMonitor.m in Sources */,
+				375255EF218070BE00328FFF /* FourViewController.m in Sources */,
+				375255E0218058CF00328FFF /* OneViewController.m in Sources */,
+				375255E6218058E800328FFF /* ThreeViewController.m in Sources */,
+				375255BD21803EF200328FFF /* AppDelegate.m in Sources */,
+				375255E3218058D900328FFF /* TwoViewController.m in Sources */,
+				375255F2218076C000328FFF /* FiveViewController.m in Sources */,
+				375255E92180629400328FFF /* ZFLeakMonitorManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		375255C121803EF300328FFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				375255C221803EF300328FFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		375255C621803EF400328FFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				375255C721803EF400328FFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		375255CC21803EF400328FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		375255CD21803EF400328FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		375255CF21803EF400328FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WF494FH62;
+				INFOPLIST_FILE = XZFLeakMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xzf.XZFLeakMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		375255D021803EF400328FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WF494FH62;
+				INFOPLIST_FILE = XZFLeakMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xzf.XZFLeakMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		375255B321803EF200328FFF /* Build configuration list for PBXProject "XZFLeakMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				375255CC21803EF400328FFF /* Debug */,
+				375255CD21803EF400328FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		375255CE21803EF400328FFF /* Build configuration list for PBXNativeTarget "XZFLeakMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				375255CF21803EF400328FFF /* Debug */,
+				375255D021803EF400328FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 375255B021803EF200328FFF /* Project object */;
+}
