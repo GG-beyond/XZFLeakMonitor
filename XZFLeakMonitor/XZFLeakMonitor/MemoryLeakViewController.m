@@ -7,11 +7,12 @@
 //
 
 #import "MemoryLeakViewController.h"
+#import "ZFLeakMonitorManager.h"
 
 @interface MemoryLeakViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *leakTableView;
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @end
 
 @implementation MemoryLeakViewController
@@ -20,6 +21,13 @@
     
     [super viewDidLoad];
     [self.view addSubview:self.leakTableView];
+    self.title = @"内存泄漏的Controller";
+    [[ZFLeakMonitorManager sharedInstance] addObserver:self forKeyPath:@"leakViewControllersArr" options:NSKeyValueObservingOptionNew context:nil];
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    self.dataSource = [[ZFLeakMonitorManager sharedInstance] getItems];
+    [self.leakTableView reloadData];
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -34,7 +42,14 @@
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
     }
+    cell.textLabel.text = [self.dataSource[indexPath.row] description];
     return cell;
+}
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60.0f;
 }
 #pragma mark - Setter && Getter
 - (UITableView *)leakTableView{
@@ -47,7 +62,18 @@
     }
     return _leakTableView;
 }
-
+- (NSMutableArray *)dataSource{
+    
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+        [_dataSource addObjectsFromArray:[[ZFLeakMonitorManager sharedInstance] getItems]];
+    }
+    return _dataSource;
+}
+- (void)dealloc{
+    
+    [[ZFLeakMonitorManager sharedInstance] removeObserver:self forKeyPath:@"leakViewControllersArr"];
+}
 /*
 #pragma mark - Navigation
 

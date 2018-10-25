@@ -7,6 +7,8 @@
 //
 
 #import "ZFLeakMonitorManager.h"
+#import "FloatView.h"
+
 @interface ZFLeakMonitorManager()
 @property (nonatomic, strong) NSMutableArray *leakViewControllersArr;//泄漏的viewController数组
 @property (nonatomic, strong) NSMutableSet *whiteListSet;//需要被拦截的白名单（eg：navigationController，tabbarController）
@@ -27,6 +29,7 @@
 - (void)start{
     
     [self.leakViewControllersArr removeAllObjects];
+    [self show];
 }
 - (void)addItems:(id)item{
     
@@ -35,11 +38,14 @@
     }
     [self.leakViewControllersArr addObject:item];
 }
-- (NSArray *)getItems{
+- (NSMutableArray *)getItems{
     
     return self.leakViewControllersArr;
 }
-- (void)show{}
+- (void)show{
+    
+    [[FloatView instance] show];
+}
 - (void)unShow{}
 
 #pragma mark - Setter && Getter

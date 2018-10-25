@@ -20,7 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.topButton];
+#ifdef DEBUG
     [[ZFLeakMonitorManager sharedInstance] start];
+#else
+
+#endif
+
 }
 - (UIButton *)topButton{
     
@@ -40,9 +45,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    NSArray *arr = [[ZFLeakMonitorManager sharedInstance] getItems];
-    NSLog(@"arr = %@",arr);
 }
 
 @end

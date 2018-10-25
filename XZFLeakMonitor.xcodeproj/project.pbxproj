@@ -23,6 +23,9 @@
 		375255EC21806B7C00328FFF /* MemoryLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255EB21806B7C00328FFF /* MemoryLeakViewController.m */; };
 		375255EF218070BE00328FFF /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255EE218070BE00328FFF /* FourViewController.m */; };
 		375255F2218076C000328FFF /* FiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255F1218076C000328FFF /* FiveViewController.m */; };
+		375255FB2181961B00328FFF /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255FA2181961B00328FFF /* CircleView.m */; };
+		375255FE21819BDD00328FFF /* FloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255FD21819BDD00328FFF /* FloatView.m */; };
+		3752560021819D9500328FFF /* leaks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 375255FF21819D9500328FFF /* leaks.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,11 @@
 		375255EE218070BE00328FFF /* FourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 		375255F0218076C000328FFF /* FiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FiveViewController.h; sourceTree = "<group>"; };
 		375255F1218076C000328FFF /* FiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiveViewController.m; sourceTree = "<group>"; };
+		375255F92181961B00328FFF /* CircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		375255FA2181961B00328FFF /* CircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		375255FC21819BDD00328FFF /* FloatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatView.h; sourceTree = "<group>"; };
+		375255FD21819BDD00328FFF /* FloatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatView.m; sourceTree = "<group>"; };
+		375255FF21819D9500328FFF /* leaks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leaks.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		375255D421803F9C00328FFF /* XZFLeakMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				375255FF21819D9500328FFF /* leaks.jpg */,
 				375255D52180402600328FFF /* UIViewController+LeakMonitor.h */,
 				375255D62180402600328FFF /* UIViewController+LeakMonitor.m */,
 				375255D8218040A100328FFF /* UINavigationController+LeakMonitor.h */,
@@ -123,6 +132,10 @@
 				375255DC2180413600328FFF /* NSObject+Swizzling.m */,
 				375255E72180629400328FFF /* ZFLeakMonitorManager.h */,
 				375255E82180629400328FFF /* ZFLeakMonitorManager.m */,
+				375255FC21819BDD00328FFF /* FloatView.h */,
+				375255FD21819BDD00328FFF /* FloatView.m */,
+				375255F92181961B00328FFF /* CircleView.h */,
+				375255FA2181961B00328FFF /* CircleView.m */,
 				375255EA21806B7C00328FFF /* MemoryLeakViewController.h */,
 				375255EB21806B7C00328FFF /* MemoryLeakViewController.m */,
 			);
@@ -186,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3752560021819D9500328FFF /* leaks.jpg in Resources */,
 				375255C821803EF400328FFF /* LaunchScreen.storyboard in Resources */,
 				375255C521803EF400328FFF /* Assets.xcassets in Resources */,
 				375255C321803EF300328FFF /* Main.storyboard in Resources */,
@@ -203,9 +217,11 @@
 				375255DD2180413600328FFF /* NSObject+Swizzling.m in Sources */,
 				375255CB21803EF400328FFF /* main.m in Sources */,
 				375255EC21806B7C00328FFF /* MemoryLeakViewController.m in Sources */,
+				375255FB2181961B00328FFF /* CircleView.m in Sources */,
 				375255DA218040A100328FFF /* UINavigationController+LeakMonitor.m in Sources */,
 				375255D72180402600328FFF /* UIViewController+LeakMonitor.m in Sources */,
 				375255EF218070BE00328FFF /* FourViewController.m in Sources */,
+				375255FE21819BDD00328FFF /* FloatView.m in Sources */,
 				375255E0218058CF00328FFF /* OneViewController.m in Sources */,
 				375255E6218058E800328FFF /* ThreeViewController.m in Sources */,
 				375255BD21803EF200328FFF /* AppDelegate.m in Sources */,

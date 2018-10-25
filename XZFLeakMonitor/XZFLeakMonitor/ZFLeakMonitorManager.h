@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 - (void)start;
 - (void)addItems:(id)item;
-- (NSArray *)getItems;
+- (NSMutableArray *)getItems;
 - (void)show;
 - (void)unShow;
 
