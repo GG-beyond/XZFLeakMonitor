@@ -4,9 +4,9 @@
 
 使用简单
 
-	#ifdef DEBUG
+	#ifdef DEBUG 
 	
-		[[ZFLeakMonitorManager sharedInstance] start];
+		[[ZFLeakMonitorManager sharedInstance] startWithMonitorView:NO];//是否默认展示监控圆View（NO=默认不展示）
 		
 	#else
 

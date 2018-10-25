@@ -21,7 +21,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.topButton];
 #ifdef DEBUG
-    [[ZFLeakMonitorManager sharedInstance] start];
+    [[ZFLeakMonitorManager sharedInstance] startWithMonitorView:NO];
 #else
 
 #endif

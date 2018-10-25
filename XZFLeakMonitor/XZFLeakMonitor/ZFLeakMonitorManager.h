@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZFLeakMonitorManager : NSObject
 
 + (instancetype)sharedInstance;
-- (void)start;
+- (void)startWithMonitorView:(BOOL)yesOrNO;
 - (void)addItems:(id)item;
 - (NSMutableArray *)getItems;
 - (void)show;

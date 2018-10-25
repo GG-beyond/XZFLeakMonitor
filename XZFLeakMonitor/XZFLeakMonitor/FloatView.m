@@ -14,6 +14,8 @@ const NSInteger FloatCicleWidth = 60.0f;
 @interface FloatView ()
 
 @property (nonatomic, strong) UIImageView *leakImageView;
+@property (nonatomic, strong) UILabel *leakLabel;
+
 @end
 static CGPoint startPoint;
 static CGPoint lastPoint;
@@ -31,7 +33,7 @@ static CGPoint lastPoint;
     return leakView;
 }
 - (void)show{
-    
+    //展示
     UIView *superView = [self superview];
     if (!superView) {
         
@@ -46,8 +48,32 @@ static CGPoint lastPoint;
         
         self.frame = CGRectMake(CGRectGetMaxX(superView.frame)-FloatCicleWidth-10,superView.center.y , FloatCicleWidth, FloatCicleWidth);
         [self addSubview:self.leakImageView];
+        [self addSubview:self.leakLabel];
     }
 }
+- (void)reShow{
+    //重新展示
+    self.hidden = NO;
+}
+- (void)unShow{
+    //不展示
+    self.hidden = YES;
+}
+
+- (void)badgeNumber:(NSInteger)number{
+    
+    if (number>0) {
+        
+        self.hidden = NO;
+        self.leakLabel.hidden = NO;
+        self.leakLabel.text = [NSString stringWithFormat:@"%ld",number];
+    }else{
+        
+        self.leakLabel.hidden = YES;
+    }
+    
+}
+
 #pragma mark - Touch method
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
@@ -61,7 +87,6 @@ static CGPoint lastPoint;
     CGPoint point = [touch locationInView:self.superview];
     
     self.center = CGPointMake(startPoint.x + point.x, startPoint.y + point.y);
-
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
@@ -88,19 +113,49 @@ static CGPoint lastPoint;
 
     
     if (CGPointEqualToPoint(lastPoint, currentPoint)) {
-        //点击
+
         NSLog(@"点击了");
+        [self pushToTargetViewController];
+        //模态
+        /*
         UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-        if (![rootVC isKindOfClass:[UINavigationController class]]) {
-            NSLog(@"根控制器不是 UINavigationController");
+        MemoryLeakViewController *vc = [[MemoryLeakViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [rootVC presentViewController:nav animated:YES completion:nil];
+         */
+    }
+}
+- (void)pushToTargetViewController{
+    
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *navi;
+    if ([rootVC isKindOfClass:[UINavigationController class]]) {
+        
+        navi = (UINavigationController *)rootVC;
+    }else if (rootVC.navigationController){
+        
+        navi = rootVC.navigationController;
+    }else if ([rootVC isKindOfClass:[UITabBarController class]]){
+        
+        for (UIViewController *vc in rootVC.childViewControllers) {
+            
+            if ([vc isKindOfClass:[UINavigationController class]]) {
+                navi = (UINavigationController *)vc;
+                break;
+            }else{
+                NSLog(@"vc不是 UINavigationController");
+            }
+        }
+        if (!navi) {
             return;
         }
-        MemoryLeakViewController *vc = [[MemoryLeakViewController alloc] init];
-        UINavigationController *navi = (UINavigationController *)rootVC;
-        [navi pushViewController:vc animated:YES];
-
+    }else{
+        NSLog(@"根控制器不是 UINavigationController");
+        return;
     }
-    
+    MemoryLeakViewController *vc = [[MemoryLeakViewController alloc] init];
+    [navi pushViewController:vc animated:YES];
+    [self unShow];
 }
 #pragma mark -Setter
 - (UIImageView *)leakImageView{
@@ -118,5 +173,19 @@ static CGPoint lastPoint;
     }
     return _leakImageView;
 }
-
+- (UILabel *)leakLabel{
+    
+    if (!_leakLabel) {
+        
+        _leakLabel = [[UILabel alloc] initWithFrame:CGRectMake(FloatCicleWidth-21, 1, 20, 20)];
+        _leakLabel.backgroundColor = [UIColor redColor];
+        _leakLabel.font = [UIFont systemFontOfSize:14];
+        _leakLabel.layer.cornerRadius = 10;
+        _leakLabel.layer.masksToBounds = YES;
+        _leakLabel.hidden = YES;
+        _leakLabel.textAlignment = NSTextAlignmentCenter;
+        _leakLabel.textColor = [UIColor whiteColor];
+    }
+    return _leakLabel;
+}
 @end

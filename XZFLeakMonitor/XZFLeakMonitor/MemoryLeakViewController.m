@@ -8,6 +8,7 @@
 
 #import "MemoryLeakViewController.h"
 #import "ZFLeakMonitorManager.h"
+#import "FloatView.h"
 
 @interface MemoryLeakViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -24,6 +25,7 @@
     self.title = @"内存泄漏的Controller";
     [[ZFLeakMonitorManager sharedInstance] addObserver:self forKeyPath:@"leakViewControllersArr" options:NSKeyValueObservingOptionNew context:nil];
 }
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     
     self.dataSource = [[ZFLeakMonitorManager sharedInstance] getItems];
@@ -72,16 +74,8 @@
 }
 - (void)dealloc{
     
+    [[FloatView instance] reShow];
     [[ZFLeakMonitorManager sharedInstance] removeObserver:self forKeyPath:@"leakViewControllersArr"];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

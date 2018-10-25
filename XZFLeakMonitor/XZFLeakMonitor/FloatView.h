@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)instance;
 
 - (void)show;
+- (void)unShow;
+- (void)reShow;
+
+- (void)badgeNumber:(NSInteger)number;
 @end
 
 NS_ASSUME_NONNULL_END
