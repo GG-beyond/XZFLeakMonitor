@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "XZFLeakMonitor"
-  s.version      = "0.0.1"
+  s.version      = "0.0.3"
   s.summary      = "A short description of XZFLeakMonitor.akdjfhajkdfhajdf "
 
   s.description  = <<-DESC
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
 
 
-  s.source_files  = "XZFLeakMonitor", "XZFLeakMonitor/XZFLeakMonitor/*.{h,m}"
+  s.source_files  = "XZFLeakMonitor/XZFLeakMonitor/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
 end
