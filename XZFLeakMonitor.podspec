@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.summary      = "A short description of XZFLeakMonitor.akdjfhajkdfhajdf "
 
   s.description  = <<-DESC
-	检测UIviewcontroller 内存泄漏问题
+	检测UIviewcontroller 内存泄漏问题 pop dismiss是，dealloc检测问题，利用viewcontroller生命周期函数
                    DESC
 
   s.homepage     = "https://github.com/GG-beyond/XZFLeakMonitor"
