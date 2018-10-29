@@ -1,3 +1,6 @@
+
+![image](https://github.com/GG-beyond/XZFLeakMonitor/blob/master/XZFLeakMonitor/XZFLeakMonitor/xzf_leak.gif)
+
 # XZFLeakMonitor
 监听viewController内存泄漏，内存泄漏，pop，dismiss
 
