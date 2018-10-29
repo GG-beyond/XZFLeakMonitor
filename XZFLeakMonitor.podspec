@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "XZFLeakMonitor"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "A short description of XZFLeakMonitor.akdjfhajkdfhajdf "
 
   s.description  = <<-DESC
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
    s.platform     = :ios, "8.0"
 
 
-  s.source       = { :git => "https://github.com/GG-beyond/XZFLeakMonitor.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/GG-beyond/XZFLeakMonitor.git", :tag => "0.0.2" }
 
 
 
