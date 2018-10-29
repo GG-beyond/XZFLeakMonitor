@@ -39,7 +39,7 @@
     if ([self.whiteListSet containsObject:item]) {//白名单
         return ;
     }
-    [[self mutableArrayValueForKeyPath:@"leakViewControllersArr"]  addObject:item];
+    [[self mutableArrayValueForKeyPath:@"leakViewControllersArr"] addObject:item];
 }
 - (NSMutableArray *)getItems{
     

@@ -35,9 +35,6 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void)dealloc{
-    NSLog(@"five");
-}
 
 /*
 #pragma mark - Navigation

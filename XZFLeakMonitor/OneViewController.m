@@ -37,9 +37,6 @@
     TwoViewController *vc = [[TwoViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (void)dealloc{
-    NSLog(@"one");
-}
 /*
 #pragma mark - Navigation
 

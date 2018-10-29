@@ -29,6 +29,8 @@ static CGPoint lastPoint;
     dispatch_once(&onceToken, ^{
         
         leakView = [[FloatView alloc] init];
+        
+
     });
     return leakView;
 }
@@ -71,10 +73,11 @@ static CGPoint lastPoint;
         
         self.leakLabel.hidden = YES;
     }
-    
 }
 
+
 #pragma mark - Touch method
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     UITouch *touch = [touches anyObject];
@@ -84,9 +87,35 @@ static CGPoint lastPoint;
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self.superview];
+    CGPoint currentPosition = [touch locationInView:self];
+    //偏移量
+    float offsetX = currentPosition.x - startPoint.x;
+    float offsetY = currentPosition.y - startPoint.y;
     
-    self.center = CGPointMake(startPoint.x + point.x, startPoint.y + point.y);
+    
+    CGFloat minWidth = FloatCicleWidth/2.0;
+
+    CGFloat centerX = self.center.x + offsetX;
+    CGFloat centerY = self.center.y + offsetY;
+    
+    CGFloat maxXWidth = CGRectGetMaxX(self.superview.frame)-FloatCicleWidth/2.0;
+    CGFloat maxYWidth = CGRectGetMaxY(self.superview.frame)-FloatCicleWidth/2.0;
+
+    //判断x极限值
+    if (centerX<=minWidth) {
+        centerX = minWidth;
+    }else if (centerX>=maxXWidth) {
+        centerX = maxXWidth;
+    }
+    //判断y极限值
+    if (centerY<=minWidth) {
+        centerY = minWidth;
+    }else if (centerY>=maxYWidth){
+        centerY = maxYWidth;
+    }
+
+
+    self.center = CGPointMake(centerX,centerY );
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
@@ -95,36 +124,42 @@ static CGPoint lastPoint;
     CGFloat centerX = self.center.x;
     CGFloat centerY = self.center.y;
 
-    CGFloat minWidth = FloatCicleWidth/2.0+15;
-    CGFloat maxXWidth = CGRectGetMaxX(self.superview.frame)-FloatCicleWidth/2.0-15;
-    CGFloat maxYWidth = CGRectGetMaxY(self.superview.frame)-FloatCicleWidth/2.0-15;
+    CGFloat minWidth = FloatCicleWidth/2.0;
+    
+    CGFloat superWidth = CGRectGetMaxX(self.superview.frame);
+    CGFloat superHeight = CGRectGetMaxY(self.superview.frame);
 
-    if (centerX<=minWidth) {
-        centerX = minWidth;
-    }else if (centerX>=maxXWidth) {
-        centerX = maxXWidth;
+    if (centerX<superWidth/2.0) {
+        
+        centerX = minWidth+10;
+    }else{
+        
+        centerX = superWidth - minWidth - 10;
     }
-    if (centerY<=minWidth) {
-        centerY = minWidth;
-    }else if (centerY>=maxYWidth){
-        centerY = maxYWidth;
-    }
-    self.center = CGPointMake(centerX, centerY);
 
+    if (centerY<=minWidth+10) {
+        
+        centerY = minWidth+10;
+    }else if (centerY >=superHeight-minWidth - 10){
+        centerY = superHeight - minWidth - 10;
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.center = CGPointMake(centerX, centerY);
+    }];
     
     if (CGPointEqualToPoint(lastPoint, currentPoint)) {
 
-        NSLog(@"点击了");
+        NSLog(@"点击了leak");
+        //使用push
         [self pushToTargetViewController];
-        //模态
-        /*
-        UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-        MemoryLeakViewController *vc = [[MemoryLeakViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [rootVC presentViewController:nav animated:YES completion:nil];
-         */
+        //使用模态
+//        [self presentToTargetViewController];
     }
 }
+
+#pragma mark - Private Methods
+//使用push
 - (void)pushToTargetViewController{
     
     UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -143,20 +178,30 @@ static CGPoint lastPoint;
                 navi = (UINavigationController *)vc;
                 break;
             }else{
-                NSLog(@"vc不是 UINavigationController");
+                NSLog(@"vc不是 无法push");
             }
         }
-        if (!navi) {
+        if (!navi) {//没有nav，没法push
+            NSLog(@"vc不是 无法push");
             return;
         }
     }else{
-        NSLog(@"根控制器不是 UINavigationController");
+        NSLog(@"vc不是 无法push");
         return;
     }
     MemoryLeakViewController *vc = [[MemoryLeakViewController alloc] init];
     [navi pushViewController:vc animated:YES];
     [self unShow];
 }
+//可以使用模态
+- (void)presentToTargetViewController{
+    
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    MemoryLeakViewController *vc = [[MemoryLeakViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [rootVC presentViewController:nav animated:YES completion:nil];
+}
+
 #pragma mark -Setter
 - (UIImageView *)leakImageView{
     

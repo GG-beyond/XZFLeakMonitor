@@ -46,9 +46,6 @@
     FiveViewController *vc = [[FiveViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (void)dealloc{
-    NSLog(@"four");
-}
 /*
 #pragma mark - Navigation
 

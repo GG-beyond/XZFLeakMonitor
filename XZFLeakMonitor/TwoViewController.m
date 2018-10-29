@@ -43,9 +43,6 @@
     ThreeViewController *vc = [[ThreeViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (void)dealloc{
-    NSLog(@"two");
-}
 /*
 #pragma mark - Navigation
 

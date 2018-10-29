@@ -45,9 +45,6 @@
     return;
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
-- (void)dealloc{
-    NSLog(@"three");
-}
 /*
 #pragma mark - Navigation
 

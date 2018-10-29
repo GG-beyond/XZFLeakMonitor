@@ -16,7 +16,7 @@
  1、通过method swizzling方式，监听vc的几个方法（viewWillAppear、viewDidDisappear）;
  2、在viewWillAppear 设置一个标识isDidPop = NO(是否已经pop),
  3、在navigationController的Pop方法里 将pop的vc->isDidPop=YES
- 4、在viewDidDisappear 根据（isDidPop=YES时）去开启监听vc是否释放了；利用的是vc的weak指针，延迟1.5秒后，判断weak指针是否为nil
+ 4、在viewDidDisappear 根据（isDidPop=YES时）去开启监听vc是否释放了；利用的是vc的weak指针，延迟1.0秒后，判断weak指针是否为nil
  
  Push和Present   Pop和Dismiss 同理
  */
@@ -49,6 +49,7 @@ const char isDidPopKey;
     [self zf_viewDidDisappear:animation];
     if (self.isDidPop) {
         [self didDealloc];
+
     }
 }
 //Dismiss
@@ -60,6 +61,7 @@ const char isDidPopKey;
     NSArray *childsArr = dismissVc.childViewControllers;
     if (childsArr.count>0) {
         for (UIViewController *vc in childsArr) {
+            
             objc_setAssociatedObject(vc, &isDidPopKey, @(YES), OBJC_ASSOCIATION_ASSIGN);
             [vc didDealloc];
         }

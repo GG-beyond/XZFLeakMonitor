@@ -31,7 +31,6 @@ extern const char isDidPopKey;
     
     UIViewController *vc = [self zf_popViewControllerAnimated:animated];
     objc_setAssociatedObject(vc, &isDidPopKey, @(YES), OBJC_ASSOCIATION_ASSIGN);
-
     return vc;
 }
 //返回指定vc
