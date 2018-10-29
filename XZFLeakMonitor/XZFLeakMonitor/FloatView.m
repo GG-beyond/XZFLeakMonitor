@@ -29,8 +29,6 @@ static CGPoint lastPoint;
     dispatch_once(&onceToken, ^{
         
         leakView = [[FloatView alloc] init];
-        
-
     });
     return leakView;
 }

@@ -26,6 +26,7 @@
 		375255FB2181961B00328FFF /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255FA2181961B00328FFF /* CircleView.m */; };
 		375255FE21819BDD00328FFF /* FloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 375255FD21819BDD00328FFF /* FloatView.m */; };
 		3752560021819D9500328FFF /* leaks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 375255FF21819D9500328FFF /* leaks.jpg */; };
+		37AD10212187146100614F89 /* xzf_leak.gif in Resources */ = {isa = PBXBuildFile; fileRef = 37AD10202187146100614F89 /* xzf_leak.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		375255FC21819BDD00328FFF /* FloatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatView.h; sourceTree = "<group>"; };
 		375255FD21819BDD00328FFF /* FloatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatView.m; sourceTree = "<group>"; };
 		375255FF21819D9500328FFF /* leaks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leaks.jpg; sourceTree = "<group>"; };
+		37AD10202187146100614F89 /* xzf_leak.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = xzf_leak.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		375255D421803F9C00328FFF /* XZFLeakMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				37AD10202187146100614F89 /* xzf_leak.gif */,
 				375255FF21819D9500328FFF /* leaks.jpg */,
 				375255D52180402600328FFF /* UIViewController+LeakMonitor.h */,
 				375255D62180402600328FFF /* UIViewController+LeakMonitor.m */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3752560021819D9500328FFF /* leaks.jpg in Resources */,
+				37AD10212187146100614F89 /* xzf_leak.gif in Resources */,
 				375255C821803EF400328FFF /* LaunchScreen.storyboard in Resources */,
 				375255C521803EF400328FFF /* Assets.xcassets in Resources */,
 				375255C321803EF300328FFF /* Main.storyboard in Resources */,
